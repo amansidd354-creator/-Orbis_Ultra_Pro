@@ -8,5 +8,5 @@ jobs:
       - name: Build APK
         uses: duckduckgo/gh-action-website-to-apk@v1
         with:
-          url: "https://${{ github.repository_owner }}.github.io/PS4-Emulator/"
+          url: "https://${{ github.repository_owner }}.github.io/-Orbis_Ultra_Pro/"
           name: "Orbis_Ultra_Pro"
