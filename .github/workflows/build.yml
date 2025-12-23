@@ -1,4 +1,4 @@
-name: Build-Orbis-Pro-APK
+name: Build-Orbis-Pro-Ultimate
 on: [push, workflow_dispatch]
 jobs:
   build:
@@ -7,11 +7,15 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Build Web to APK
+      - name: Build Advanced APK
         uses: sweto/web-to-apk-action@v1
         with:
           url: "https://amansidd354-creator.github.io/-Orbis_Ultra_Pro/"
-          app-name: "Orbis_Ultra_Pro"
+          app-name: "Orbis Ultra Standalone"
           package-name: "com.orbis.ultra.pro"
-          # Force storage permissions
-          permissions: "INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, MANAGE_EXTERNAL_STORAGE"
+          # Winlator jaise features ke liye permissions
+          permissions: "INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, MANAGE_EXTERNAL_STORAGE, CAMERA"
+          # Engine ko fast chalane ke liye hidden settings
+          additional-tags: |
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+            <meta name="theme-color" content="#000000">
