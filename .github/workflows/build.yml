@@ -1,12 +1,17 @@
 name: Build-Orbis-Pro-APK
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build APK
-        uses: duckduckgo/gh-action-website-to-apk@v1
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Build Web to APK
+        uses: sweto/web-to-apk-action@v1
         with:
-          url: "https://${{ github.repository_owner }}.github.io/-Orbis_Ultra_Pro/"
-          name: "Orbis_Ultra_Pro"
+          url: "https://amansidd354-creator.github.io/-Orbis_Ultra_Pro/"
+          app-name: "Orbis_Ultra_Pro"
+          package-name: "com.orbis.ultra.pro"
+          # Force storage permissions
+          permissions: "INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, MANAGE_EXTERNAL_STORAGE"
